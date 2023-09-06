@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vertical Nagvation Bar</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .Nagvation-Bar {
+            background-color: #69a0aa;
+            width: 200px;
+            height: 100%;
+        }
+
+        .Nagvation-Bar ul li {
+            align-items: start;
+        }
+
+
+        .Nagvation-Bar ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+        }
+
+        .Nagvation-Bar ul li a:hover {
+            background-color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .horizontal-bar {
+            background-color: #69a0aa;
+            width: 200px;
+            height: 100%;
+        }
+
+        .horizontal-bar ul li {
+            align-items: end;
+        }
+
+
+        .horizontal-bar ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+        }
+
+        .horizontal-bar ul li a:hover {
+            background-color: #555;
+        }
+
+
+        /* Reset default margin and padding for lists */
+        ul {
+            list-style-type: none;
+            margin: 110;
+            padding: 110;
+        }
+
+        /* Style the horizontal navigation bar */
+        .horizontal-nav {
+            background-color: #333;
+            /* Background color for the navigation bar */
+        }
+
+        /* Style the list items to display horizontally */
+        .horizontal-nav ul {
+            display: flex;
+            /* Use flexbox for horizontal layout */
+        }
+
+        /* Style the list items */
+        .horizontal-nav ul li {
+            text-align: end;
+        }
+
+        /* Style the links */
+        .horizontal-nav ul li a {
+            display: block;
+            color: rgba(245, 10, 10, 0.897);
+            /* Text color for the links */
+            text-decoration: none;
+            /* Remove underlines from the links */
+            padding: 20px;
+            /* Add some padding to the links */
+        }
+
+        /* Change link color on hover */
+        .horizontal-nav ul li a:hover {
+            background-color: #407fb3;
+            /* Background color on hover */
+        }
+
+        /* Add spacing between list items */
+        .horizontal-nav ul li+li {
+            margin-left: 100px;
+            /* Adjust the spacing as needed */
+        }
+    </style>
+
+
+
+
+</head>
+
+<body>
+    <p>Negavation Bar</p>
+    <div class="Nagvation-Bar">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Java</a></li>
+            <li><a href="">CSS</a></li>
+            <li><a href="">Html</a></li>
+            <li><a href="">Bootstrap</a></li>
+        </ul>
+    </div>
+    <p align="center">Horizontal Navigation Bar</p>
+    <nav class="horizontal-nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Java</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">HTML</a></li>
+            <li><a href="#">Bootstrap</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>

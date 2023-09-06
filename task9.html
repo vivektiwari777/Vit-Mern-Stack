@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Hoverable Side Navigation</title>
+</head>
+
+<body>
+    <div class="sidenav">
+        <button class="sidenav-btn">Home</button>
+        <div class="sidenav-dropdown">
+            <button class="dropdown-btn">Products</button>
+            <div class="dropdown-content">
+                <a href="#">Product 1</a>
+                <a href="#">Product 2</a>
+                <a href="#">Product 3</a>
+            </div>
+        </div>
+        <div class="sidenav-dropdown">
+            <button class="dropdown-btn">Services</button>
+            <div class="dropdown-content">
+                <a href="#">Service 1</a>
+                <a href="#">Service 2</a>
+                <a href="#">Service 3</a>
+            </div>
+        </div>
+        <button class="sidenav-btn">Contact</button>
+    </div>
+</body>
+
+</html>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #72b1cb;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidenav {
+        width: 250px;
+        background-color: #930b6c;
+        padding-top: 20px;
+    }
+
+    .sidenav-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: #9b1cd7;
+        color: #149f69;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        outline: none;
+    }
+
+    .sidenav-btn:hover {
+        background-color: #1c1098;
+    }
+
+    .sidenav-dropdown {
+        position: relative;
+    }
+
+    .dropdown-btn {
+        width: 100%;
+        padding: 15px;
+        background-color: #06755b;
+        color: #86ca17;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        transition: 0.3s;
+        outline: none;
+    }
+
+    .dropdown-btn:hover {
+        background-color: #82177c;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #d705b7;
+        min-width: 100%;
+        left: 100%;
+        top: 0;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        padding: 15px;
+        text-decoration: none;
+        color: #fff;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #2f0e85;
+    }
+
+    .sidenav-dropdown:hover .dropdown-content {
+        display: block;
+    }
+</style>
