@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Registration form</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+            <span id="firstNameError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+            <span id="lastNameError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <span id="emailError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <span id="passwordError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="confirmPassword">Re-enter Password:</label>
+            <input type="password" id="confirmPassword" required>
+            <span id="confirmPasswordError" class="error">POOR OR MISMATCH</span>
+        </div>
+        <div>
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+        </div>
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" required>
+            <span id="ageError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" required>
+            <span id="phoneNumberError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" required></textarea>
+            <span id="addressError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="state">State:</label>
+            <input type="text" id="state" required>
+            <span id="stateError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="country">Country:</label>
+            <select id="country" required>
+                <option value="">Choose your country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <!-- Add more countries as needed -->
+            </select>
+            <span id="countryError" class="error">POOR</span>
+        </div>
+        <div>
+            <label for="languagesKnown">Languages known:</label>
+            <input type="checkbox" id="english" name="languages" value="English">
+            <label for="english">English</label>
+            <input type="checkbox" id="kannada" name="languages" value="Kannada">
+            <label for="kannada">Kannada</label>
+            <input type="checkbox" id="hindi" name="languages" value="Hindi">
+            <label for="hindi">Hindi</label>
+            <input type="checkbox" id="telugu" name="languages" value="Telugu">
+            <label for="telugu">Telugu</label>
+        </div>
+        <div>
+            <input type="checkbox" id="declaration" required>
+            <label for="declaration">Hereby I declare all the given details are true</label>
+        </div>
+        <button type="submit">REGISTER</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Reset error messages
+            const errorElements = document.querySelectorAll('.error');
+            errorElements.forEach((element) => {
+                element.style.display = 'none';
+            });
+
+            // Get form inputs
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const gender = document.querySelector('input[name="gender"]:checked');
+            const age = document.getElementById('age').value.trim();
+            const phoneNumber = document.getElementById('phoneNumber').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const state = document.getElementById('state').value.trim();
+            const country = document.getElementById('country').value;
+            const languagesKnown = document.querySelectorAll('input[name="languages"]:checked');
+            const declaration = document.getElementById('declaration').checked;
+
+            let isValid = true;
+
+            // Validation functions
+            function showError(id, message) {
+                const errorElement = document.getElementById(id);
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                isValid = false;
+            }
+
+            function isValidPassword(password) {
+                // Implement your password validation logic here
+                // For example, check for a minimum length
+                return password.length >= 8;
+            }
+
+            // Perform field-specific validation
+            if (!firstName) {
+                showError('firstNameError', 'POOR');
+            }
+
+            if (!lastName) {
+                showError('lastNameError', 'POOR');
+            }
+
+            if (!email) {
+                showError('emailError', 'POOR');
+            }
+
+            if (!isValidPassword(password)) {
+                showError('passwordError', 'POOR');
+            }
+
+            if (password !== confirmPassword) {
+                showError('confirmPasswordError', 'POOR OR MISMATCH');
+            }
+
+            if (!gender) {
+                showError('genderError', 'Please select a gender');
+            }
+
+            if (!age) {
+                showError('ageError', 'POOR');
+            }
+
+            if (!phoneNumber) {
+                showError('phoneNumberError', 'POOR');
+            }
+
+            if (!address) {
+                showError('addressError', 'POOR');
+            }
+
+            if (!state) {
+                showError('stateError', 'POOR');
+            }
+
+            if (country === '') {
+                showError('countryError', 'POOR');
+            }
+
+            if (languagesKnown.length === 0) {
+                showError('languagesKnownError', 'Please select at least one language');
+            }
+
+            if (!declaration) {
+                showError('declarationError', 'You must agree to the declaration');
+            }
+
+            return isValid;
+        }
+    </script>
+</body>
+
+</html>

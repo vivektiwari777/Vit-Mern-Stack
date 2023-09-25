@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function sortStringAlphabetically(str) {
+            // Convert the string to an array of characters
+            let charArray = str.split('');
+
+            // Perform a simple bubble sort to sort the characters
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 0; i < charArray.length - 1; i++) {
+                    if (charArray[i] > charArray[i + 1]) {
+                        // Swap the characters
+                        let temp = charArray[i];
+                        charArray[i] = charArray[i + 1];
+                        charArray[i + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+
+            // Join the sorted array back into a string
+            return charArray.join('');
+        }
+
+        // Example usage:
+        let inputString = 'webmaster';
+        let sortedString = sortStringAlphabetically(inputString);
+        console.log(sortedString); // Output: 'abeemrstw'
+
+    </script>
+</body>
+
+</html>

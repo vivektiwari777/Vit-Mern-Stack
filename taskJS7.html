@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation Control</title>
+    <style>
+        #train {
+            width: 100px;
+            height: 50px;
+            background-color: #ff0000;
+            position: absolute;
+            left: -100px;
+            top: 50%;
+            transition: left 2s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="train"></div>
+    <button id="startButton" onclick="startTrain()">Start</button>
+    <button id="stopButton" onclick="stopTrain()" disabled>Stop</button>
+
+    <script>
+        let isMoving = false;
+        const trainElement = document.getElementById('train');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+
+        function startTrain() {
+            trainElement.style.left = '100%';
+            isMoving = true;
+            startButton.disabled = true;
+            stopButton.disabled = false;
+        }
+
+        function stopTrain() {
+            trainElement.style.left = '-100px';
+            isMoving = false;
+            startButton.disabled = false;
+            stopButton.disabled = true;
+        }
+    </script>
+</body>
+
+</html>

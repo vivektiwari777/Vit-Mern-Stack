@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="i1"></p>
+    <p class="c1" id="i2"></p>
+
+    <p class="c1">Hello</p>
+    <p class="n1">Hello</p> 
+    <p>hello</p>
+    <p class="c1">Hello</p>
+    <p class="n1">Hello</p>
+    <p class="c1">Hello</p>
+    <p class="n1">Hello</p>
+
+
+    <button onclick="f1()"># of class as c1</button>
+    <button onclick="f2()"># of class as n1</button>
+    <button onclick="f3()"># of tags with p</button>
+    <button onclick="f4()">modify content</button>
+    <script>
+        document.write("<h1>Documents objects</h1> <br/>");
+        document.write("hi");
+        document.write("hello<br/>");
+        document.writeln("hi");
+        document.write("hi");
+        document.writeln("hello<br/>");
+
+        document.getElementById("i1").innerHTML="<h1>welcome</h1>"
+        document.getElementById("i2").innerHTML="<h1>welcome</h1>"
+        
+        function f1(){
+            let total=document.getElementsByClassName("c1").length;
+            alert("no. of tags having class name as c1 " + total);
+        }
+        function f2(){
+            let total=document.getElementsByClassName("n1").length;
+            alert("no. of tags having class name as n1 " + total);
+        }
+        function f3(){
+            let total=document.getElementsByClassName("p").length;
+            alert("no. of tags having class name as p " + total);
+        }
+        function f4(){
+            document.getElementsByClassName("c1")[2].innerHTML="welcome";   // give an array of tags with class name mentioned// 
+        }
+    </script>
+
+</body>
+</html>

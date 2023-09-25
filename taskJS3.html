@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Multiplication and Division Calculator</title>
+</head>
+
+<body>
+    <h1>Multiplication and Division Calculator</h1>
+
+    <label for="firstNumber">1st number:</label>
+    <input type="number" id="firstNumber" placeholder="Enter the first number"><br>
+
+    <label for="secondNumber">2nd number:</label>
+    <input type="number" id="secondNumber" placeholder="Enter the second number"><br>
+
+    <button onclick="multiply()">Multiply</button>
+    <button onclick="divide()">Divide</button><br>
+
+    <p>Result:</p>
+    <p id="result"></p>
+
+    <script>
+        function multiply() {
+            const firstNumber = parseFloat(document.getElementById("firstNumber").value);
+            const secondNumber = parseFloat(document.getElementById("secondNumber").value);
+
+            const multiplicationResult = firstNumber * secondNumber;
+            document.getElementById("result").textContent = `Multiplication: ${multiplicationResult}`;
+        }
+
+        function divide() {
+            const firstNumber = parseFloat(document.getElementById("firstNumber").value);
+            const secondNumber = parseFloat(document.getElementById("secondNumber").value);
+
+            if (secondNumber === 0) {
+                document.getElementById("result").textContent = "Cannot divide by zero";
+                return;
+            }
+
+            const divisionResult = firstNumber / secondNumber;
+            document.getElementById("result").textContent = `Division: ${divisionResult}`;
+        }
+    </script>
+</body>
+
+</html>

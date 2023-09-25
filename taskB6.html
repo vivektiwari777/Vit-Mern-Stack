@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email <span style="color: red;">*</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password <span style="color: red;">*</span></label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="hobbies">Hobbies</label>
+                        <input type="text" class="form-control" id="hobbies" placeholder="Enter your hobbies">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <div class="alert alert-danger mt-3" style="display: none;">Please fill out all required fields.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // JavaScript to display the alert if required fields are not filled out
+        document.querySelector('form').addEventListener('submit', function (event) {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+
+            if (!name || !email || !password) {
+                document.querySelector('.alert').style.display = 'block';
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+    </script>
+</body>
+
+</html>

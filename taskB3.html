@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>page 3</h1>
+    <button onclick="history.back()">prev</button>
+    <!-- <button>next</button> -->
+
+    <h1>location object</h1>
+    <button onclick="f1()">Assign</button>
+    <button onclick="f2()">Replace</button>
+    <button onclick="f3()">Refresh</button>
+    <script>
+           function f1(){
+               location.assign("https://www.ethnus.com");  // storing the previous pages
+           }
+           function f2(){
+               location.replace("https://www.ethnus.com");  // not storing the previous pages instead it is erasing it
+           }
+           function f3(){
+               location.reload("https://www.ethnus.com");
+           }
+           console.log("Navigator objects");
+           console.log(navigator.appName);
+           console.log(navigator.cookieEnabled);
+           console.log(navigator.onLine);
+           console.log(navigator.platform);
+           console.log(navigator.language);
+
+           console.log("screen objects");
+           console.log(screen.availHeight);
+           console.log(screen.height);
+           console.log(screen.availWidth);
+           console.log(screen.width);
+           console.log(screen.colorDepth);
+           console.log(screen.pixelDepth);
+
+    </script>
+</body>
+</html>

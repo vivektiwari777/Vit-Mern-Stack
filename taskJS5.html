@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <form id="myForm" onsubmit="return validateForm()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <span id="nameError" class="error">This field is required</span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <span id="emailError" class="error">A valid email address is required</span>
+        </div>
+        <div>
+            <label for="website">Website:</label>
+            <input type="url" id="website" required>
+            <span id="websiteError" class="error">A valid URL is required</span>
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" required></textarea>
+            <span id="messageError" class="error">This field is required</span>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        function validateForm() {
+            // Reset error messages
+            document.getElementById('nameError').style.display = 'none';
+            document.getElementById('emailError').style.display = 'none';
+            document.getElementById('websiteError').style.display = 'none';
+            document.getElementById('messageError').style.display = 'none';
+
+            // Get form inputs
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var website = document.getElementById('website').value.trim();
+            var message = document.getElementById('message').value.trim();
+
+            // Validate each field
+            var isValid = true;
+
+            if (name === "") {
+                document.getElementById('nameError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValidEmail(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (!isValidURL(website)) {
+                document.getElementById('websiteError').style.display = 'block';
+                isValid = false;
+            }
+
+            if (message === "") {
+                document.getElementById('messageError').style.display = 'block';
+                isValid = false;
+            }
+
+            return isValid;
+        }
+
+        function isValidEmail(email) {
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            return emailPattern.test(email);
+        }
+
+        function isValidURL(url) {
+            var urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+            return urlPattern.test(url);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // console.log("1");
+        // console.log("2");
+        // console.log("3");
+        // selfTimeout(() => {
+        //    console.log("3.5");
+        // }, 3000);  // async functions 
+        // console.log("4");
+        // console.log("5");
+        // node -v    -> node js commands
+        // npm -v     
+
+
+        const p=new Promise((res,rej) => {
+            //res("success");   -> then  will be executed
+            rej("oops");      // -> catch will be executed
+        });
+        p.then((msg) => console.log("Done " + msg)).catch((err) => console.log("Error occured " + err));
+
+    </script>
+</body>
+</html>
